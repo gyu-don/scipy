@@ -2656,8 +2656,6 @@ def _minimize_powell(func, x0, args=(), callback=None,
             print("         Iterations: %d" % iter)
             print("         Function evaluations: %d" % fcalls[0])
 
-    x = squeeze(x)
-
     result = OptimizeResult(fun=fval, direc=direc, nit=iter, nfev=fcalls[0],
                             status=warnflag, success=(warnflag == 0),
                             message=msg, x=x)
