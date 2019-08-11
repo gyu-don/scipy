@@ -2518,6 +2518,7 @@ def fmin_powell(func, x0, args=(), xtol=1e-4, ftol=1e-4, maxiter=None,
             'return_all': retall}
 
     res = _minimize_powell(func, x0, args, callback=callback, **opts)
+    res['x'] = squeeze(res['x'])
 
     if full_output:
         retlist = (res['x'], res['fun'], res['direc'], res['nit'],
